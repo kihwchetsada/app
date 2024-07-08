@@ -1,27 +1,41 @@
-class animal{
-  void makeSound(){
-    print("animal make a sound");
+// The base class
+class Animal {
+  void makeSound() {
+    print("Animal makes a sound");
   }
 }
-class dog extends animal{
-  void bark(){
-    print('Dog bark');
-  }
-}
-class bird extends animal{
-void fly(){
-  print('bird fly');
-}
-  void makeSound(){
-    print('dog make a sound');
-    print('bird make a sound');
+
+// Derived class Dog
+class Dog extends Animal {
+  void bark() {
+    print('Dog barks');
   }
 
+  @override
+  void makeSound() {
+    print("Dog makes a sound");
+  }
+}
+
+// Derived class Bird
+class Bird extends Animal {
+  void fly() {
+    print('Bird flies');
+  }
+
+  @override
+  void makeSound() {
+    print("Bird chirps");
+  }
+}
+
 void main() {
-  dog mydog = dog();
-  mydog.makeSound();
-  mydog.bark();
-  bird mybird = bird();
-  mybird.makeSound();
-  mybird.fly();
+  // Create instances of Dog and Bird
+  var myDog = Dog();
+  myDog.makeSound(); // Dog makes a sound
+  myDog.bark(); // Dog barks
+
+  var myBird = Bird();
+  myBird.makeSound(); // Bird chirps
+  myBird.fly(); // Bird flies
 }
